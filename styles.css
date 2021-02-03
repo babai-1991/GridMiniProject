@@ -77,7 +77,10 @@ p {
 	color: var(--mainWhite);
 	background: var(--primaryColor);
 }
-
+.medium,
+.large {
+	display: none;
+}
 /* 
 =================
 main navbar
@@ -181,7 +184,7 @@ Cards
 
 .cards-center {
 	width: 80vw;
-	min-width: 1170px;
+	max-width: 1170px;
 	margin: 2rem auto;
 }
 
@@ -204,4 +207,32 @@ Cards
 
 .card-footer span {
 	color: var(--primaryColor);
+}
+
+/* 2 column layout */
+@media screen and (min-width: 768px) {
+	.small {
+		display: none;
+	}
+	.medium {
+		display: inline-block;
+	}
+	.cards-center {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
+	}
+}
+/* 3 column layout */
+@media screen and (min-width: 992px) {
+	.small,
+	.medium {
+		display: none;
+	}
+	.large {
+		display: inline-block;
+	}
+	.cards-center {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
