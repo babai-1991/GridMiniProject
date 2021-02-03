@@ -77,3 +77,44 @@ p {
 	color: var(--mainWhite);
 	background: var(--primaryColor);
 }
+
+/* 
+=================
+main navbar
+=================
+*/
+.main-navbar {
+	background: var(--darkGrey);
+	padding: 0 2rem;
+}
+
+.main-navbar li {
+	list-style-type: none;
+}
+
+.main-navbar a {
+	text-transform: capitalize;
+	display: block;
+	padding: 1rem 0;
+	color: var(--primaryColor);
+	letter-spacing: var(--spacing);
+	transition: var(--transitionMain);
+}
+.main-navbar a:hover {
+	color: var(--mainBlack);
+}
+
+/* on bigger screen display navbar in one line */
+@media screen and (min-width: 992px) {
+	/* positioned center */
+	.main-navbar ul {
+		max-width: 1170px;
+		margin: 0 auto;
+		/*align items side by side */
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.main-navbar a {
+		text-align: center;
+	}
+}
