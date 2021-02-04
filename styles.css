@@ -403,3 +403,52 @@ Layout
 		justify-items: center;
 	}
 }
+
+@media screen and (min-width: 992px) {
+	.main {
+		display: grid;
+		grid-template-columns: [col-start] 200px [col-1-end] 1fr [col-2-end] 50px [col-end];
+		grid-template-rows: [row-start] auto [row-1-end] 1fr [row-2-end] auto [row-end];
+	}
+
+	.header {
+		grid-column: col-start/col-end;
+		grid-row: row-start/row-1-end;
+	}
+
+	.navbar {
+		grid-column: col-start/col-1-end;
+		grid-row: row-1-end/row-2-end;
+	}
+
+	.section {
+		grid-column: col-1-end/col-2-end;
+		grid-row: row-1-end/row-2-end;
+	}
+
+	.sidebar {
+		grid-column: col-2-end/col-end;
+		grid-row: row-1-end/row-2-end;
+	}
+
+	.footer {
+		grid-column: col-start/col-end;
+		grid-row: row-2-end/row-end;
+	}
+	/* on 768 px I made 4 columns layout but here , I need to make one column,
+ so it could stack at the top of each other */
+	.navbar ul {
+		grid-template-columns: 1fr;
+		/* placed center */
+		align-items: center;
+		min-height: 100%;
+	}
+
+	.sidebar {
+		grid-template-columns: 1fr;
+		/* placed center */
+		align-items: center;
+		min-height: 100%;
+		background: var(--darkGrey);
+	}
+}
