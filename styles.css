@@ -315,5 +315,6 @@ Tiles
 	/* to fit the image */
 	.tiles img {
 		height: 100%;
+		object-fit: cover;
 	}
 }
