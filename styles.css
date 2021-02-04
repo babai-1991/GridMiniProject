@@ -236,3 +236,10 @@ Cards
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
+
+/* adjusting row content */
+.card {
+	display: grid;
+	grid-template-columns: 1fr; /* one column layout */
+	grid-template-rows: auto 1fr auto; /* each card has 3 rows => img tag , info ,footer */
+}
