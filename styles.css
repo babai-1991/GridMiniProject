@@ -318,3 +318,88 @@ Tiles
 		object-fit: cover;
 	}
 }
+
+/* 
+=================
+Layout
+=================
+*/
+
+.header {
+	background: var(--primaryColor);
+	color: var(--mainWhite);
+	text-align: center;
+	padding: .5rem 0;
+}
+
+.navbar {
+	background: var(--darkGrey);
+}
+
+.navbar li {
+	list-style-type: none;
+}
+
+.navbar a {
+	padding: 1rem;
+	display: inline-block;
+	text-transform: capitalize;
+	letter-spacing: var(--spacing);
+	font-size: 1.2rem;
+	color: var(--mainBlack);
+	transition: var(--transitionMain);
+}
+
+.navbar a:hover {
+	color: var(--mainWhite);
+}
+
+.section {
+	padding: 2rem;
+}
+
+.section p {
+	font-size: 1rem;
+}
+
+.sidebar {
+	background: var(--primaryColor);
+	padding: 1rem 0;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+	color: var(--mainWhite);
+	font-size: 1.2rem;
+}
+
+.footer {
+	background: var(--mainBlack);
+	color: var(--mainWhite);
+	text-align: center;
+	text-transform: capitalize;
+	padding: .5rem 0;
+}
+
+.footer p {
+	font-size: 1.2rem;
+}
+
+/* If there is no enough content but still this code make sure content area occupy maximum space */
+/* to test , just remove some text from content , You will notice footer is still on the bottom of the page */
+.main {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	/* rows are .header .navbar .section(content) sidebar(social media) footer */
+	/* 1fr means occupy all the remaining space */
+	grid-template-rows: auto auto 1fr auto auto;
+}
+
+/* 768px navbar goes horizontal */
+@media screen and (min-width: 768px) {
+	.navbar ul {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		justify-items: center;
+	}
+}
